@@ -3,6 +3,8 @@ import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
 
+st.set_page_config(layout="wide")
+
 color_chart = px.colors.qualitative.Light24
 slicing_color_chart = color_chart[:14]
 all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO"]

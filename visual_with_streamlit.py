@@ -7,7 +7,7 @@ color_chart = px.colors.qualitative.Light24
 slicing_color_chart = color_chart[:14]
 all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO"]
 
-data = pd.read_csv(r"C:\Users\user\Downloads\AL_all_result.csv")
+data = pd.read_csv('./data/AL_all_result.csv')
 
 def each_strategy_fig(base_fig, data, each_strategy, each_color):
     base_fig.add_trace(

@@ -94,6 +94,9 @@ def each_class_fig(each_class, each_full_train_value, each_range, each_tick_valu
     fig.update_xaxes(ticks="outside", showline=True, linecolor='lightgrey')
     fig.update_yaxes(showline=True, linecolor='lightgrey')
 
+    # Set the width of the figure to utilize the full width of the page
+    fig.update_layout(width=1800)
+
     return fig
 
 # Display the Streamlit app

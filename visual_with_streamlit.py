@@ -70,7 +70,7 @@ def each_class_fig(each_class, each_full_train_value, each_range, each_tick_valu
         each_strategy_fig(base_fig=fig, data=data, each_strategy=target, each_color=this_color)
 
     fig.update_layout(
-        title=f'Active learning-{each_class} beat',
+        title=f'{each_class} beat',
         xaxis_title='Round (Each round query 100 data.)',
         yaxis_title='f1 score',
         showlegend=True,

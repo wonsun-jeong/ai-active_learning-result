@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 
 color_chart = px.colors.qualitative.Light24
 slicing_color_chart = color_chart[:14]
-all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO"]
+all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS"]
 
 data = pd.read_csv('./data/AL_all_result.csv')
 

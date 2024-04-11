@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 
 color_chart = px.colors.qualitative.Light24
 slicing_color_chart = color_chart[:14]
-all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG"]
+all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA"]
 
 data = pd.read_csv('./data/AL_all_result.csv')
 
@@ -100,7 +100,7 @@ def each_class_fig(each_class, each_full_train_value, each_range, each_tick_valu
     return fig
 
 # Display the Streamlit app
-st.title("Active Learning Beats")
+st.title("Active Learning Beats Classification F1-Score")
 
 class_list = ['N', 'S', 'V']
 full_train_value = [0.95719087, 0.80864413, 0.92291774]

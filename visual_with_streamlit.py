@@ -2,11 +2,15 @@ import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
+import matplotlib.colors as mcolors
 
 st.set_page_config(layout="wide")
 
-color_chart = px.colors.qualitative.Light24
-slicing_color_chart = color_chart[:14]
+palette = sns.color_palette('cubehelix', 14)
+color_values = [mcolors.rgb2hex(color) for color in palette]
+
+# color_chart = px.colors.qualitative.Light24
+# slicing_color_chart = color_chart[:14]
 all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA"]
 
 data = pd.read_csv('./data/AL_all_result.csv')
@@ -43,7 +47,7 @@ def each_strategy_fig(base_fig, data, each_strategy, each_color):
     )
 
 def each_class_fig(each_class, each_full_train_value, each_range, each_tick_value,
-                   strategy_list=all_strategy_list, color_list=slicing_color_chart):
+                   strategy_list=all_strategy_list, color_list=color_values): #slicing_color_chart):
     fig = go.Figure()
 
     baseline_value = each_full_train_value

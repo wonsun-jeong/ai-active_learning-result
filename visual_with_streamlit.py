@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import plotly.express as px
 import matplotlib.colors as mcolors
+import seaborn as sns
 
 st.set_page_config(layout="wide")
 

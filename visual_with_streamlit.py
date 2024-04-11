@@ -4,12 +4,13 @@ import pandas as pd
 import plotly.express as px
 import matplotlib.colors as mcolors
 import seaborn as sns
+from random import shuffle
 
 st.set_page_config(layout="wide")
 
 palette = sns.color_palette('cubehelix', 14)
 color_values = [mcolors.rgb2hex(color) for color in palette]
-
+shuffle(color_values)
 # color_chart = px.colors.qualitative.Light24
 # slicing_color_chart = color_chart[:14]
 all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA"]

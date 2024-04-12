@@ -11,6 +11,10 @@ st.set_page_config(layout="wide")
 palette = sns.color_palette('cubehelix', 14)
 color_values = [mcolors.rgb2hex(color) for color in palette]
 shuffle(color_values)
+
+custom_color_pallette = ['#2e3192', '#9267c2', '#c9a6ff', '#e589d4', '#f5b8e6', '#c1b5e5', '#00cfff',
+                         '#93d5db', '#3a93ba', '#2b7ed8', '#262566', '#00c0b7', '#3DCE82', '#CE6F3D']
+
 # color_chart = px.colors.qualitative.Light24
 # slicing_color_chart = color_chart[:14]
 all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA"]
@@ -49,7 +53,7 @@ def each_strategy_fig(base_fig, data, each_strategy, each_color):
     )
 
 def each_class_fig(each_class, each_full_train_value, each_range, each_tick_value,
-                   strategy_list=all_strategy_list, color_list=color_values): #slicing_color_chart):
+                   strategy_list=all_strategy_list, color_list=custom_color_pallette): #slicing_color_chart):
     fig = go.Figure()
 
     baseline_value = each_full_train_value

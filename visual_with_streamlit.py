@@ -17,7 +17,7 @@ custom_color_pallette = ['#2e3192', '#9267c2', '#c9a6ff', '#e589d4', '#f5b8e6', 
 
 # color_chart = px.colors.qualitative.Light24
 # slicing_color_chart = color_chart[:14]
-all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA", "BALD"]
+all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA", "BALD", "VR"]
 
 data = pd.read_csv('./data/AL_all_result.csv')
 

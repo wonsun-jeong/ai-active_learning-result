@@ -18,8 +18,8 @@ st.set_page_config(layout="wide")
 # custom_color_pallette = ['#2e3192', '#9267c2', '#c9a6ff', '#e589d4', '#f5b8e6', '#c1b5e5', '#00cfff',
 #                          '#93d5db', '#3a93ba', '#2b7ed8', '#262566', '#00c0b7', '#3DCE82', '#CE6F3D']
 
-better_visual_pallette = ['#F0466E', '#FFB9E1', '#FFD264', '#05D7A0', '#69BEEB',
-                          '#0F8CB4', '#233C4B', '#FF7D2D', '#A0C382', '#5F9B8C', '#64508C']
+better_visual_pallette = ['#F0466E', '#FFB9E1', '#FFD264', '#05D7A0', '#69BEEB', '#0F8CB4',
+                          '#233C4B', '#FF7D2D', '#A0C382', '#5F9B8C', '#64508C', '#AAA5A5']
 
 all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA", "BALD", "VR", "MSTD", "BS"]
 

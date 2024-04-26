@@ -12,27 +12,31 @@ st.set_page_config(layout="wide")
 # color_values = [mcolors.rgb2hex(color) for color in palette]
 # shuffle(color_values)
 
-custom_color_pallette = ['#2e3192', '#9267c2', '#c9a6ff', '#e589d4', '#f5b8e6', '#c1b5e5', '#00cfff',
-                         '#93d5db', '#3a93ba', '#2b7ed8', '#262566', '#00c0b7', '#3DCE82', '#CE6F3D']
+# color_chart = px.colors.qualitative.Light24
+# slicing_color_chart = color_chart[:14]
+
+# custom_color_pallette = ['#2e3192', '#9267c2', '#c9a6ff', '#e589d4', '#f5b8e6', '#c1b5e5', '#00cfff',
+#                          '#93d5db', '#3a93ba', '#2b7ed8', '#262566', '#00c0b7', '#3DCE82', '#CE6F3D']
 
 better_visual_pallette = ['#F0466E', '#FFB9E1', '#FFD264', '#05D7A0', '#69BEEB',
                           '#0F8CB4', '#233C4B', '#FF7D2D', '#A0C382', '#5F9B8C', '#64508C']
-# color_chart = px.colors.qualitative.Light24
-# slicing_color_chart = color_chart[:14]
+
 all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA", "BALD", "VR", "MSTD", "BS"]
 
 data = pd.read_csv('./data/AL_all_result.csv')
 
-def each_strategy_fig(base_fig, data, each_strategy, each_color):
+def each_strategy_fig_max(base_fig, data, each_strategy, each_color):
+    max_score_round = data.loc[data[each_strategy].idxmax()]
+
     base_fig.add_trace(
         go.Scatter(
             x=data['round'],
             y=data[each_strategy],
             mode='lines',
             line=dict(color=f'{each_color}'),
-            name=each_strategy,))
-
-    max_score_round = data.loc[data[each_strategy].idxmax()]
+            name=f"{each_strategy} (Max: {max_score_round[each_strategy]:.3f})",  # Modify the legend name
+            )
+    )
 
     base_fig.add_trace(go.Scatter(
         x=[max_score_round['round']],
@@ -42,7 +46,8 @@ def each_strategy_fig(base_fig, data, each_strategy, each_color):
             size=10,
             color=f'{each_color}',
             symbol='star'),
-        name='Max score')
+        name='Max score',
+        showlegend=False)
     )
 
     base_fig.add_annotation(
@@ -79,7 +84,7 @@ def each_class_fig(each_class, each_full_train_value, each_range, each_tick_valu
         this_color = color_list[i]
         target = this_strategy + f'_{each_class}'
 
-        each_strategy_fig(base_fig=fig, data=data, each_strategy=target, each_color=this_color)
+        each_strategy_fig_max(base_fig=fig, data=data, each_strategy=target, each_color=this_color)
 
     fig.update_layout(
         title=f'{each_class} beat',
@@ -108,6 +113,7 @@ def each_class_fig(each_class, each_full_train_value, each_range, each_tick_valu
 
     # Set the width of the figure to utilize the full width of the page
     fig.update_layout(width=1800)
+    fig.show()
 
     return fig
 

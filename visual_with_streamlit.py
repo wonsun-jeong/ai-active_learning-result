@@ -21,7 +21,7 @@ st.set_page_config(layout="wide")
 better_visual_pallette = ['#F0466E', '#FFB9E1', '#FFD264', '#05D7A0', '#69BEEB', '#0F8CB4',
                           '#233C4B', '#FF7D2D', '#A0C382', '#5F9B8C', '#64508C', '#AAA5A5']
 
-all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA", "BALD", "VR", "MSTD", "BS"]
+all_strategy_list = ["RS", "LCDO", "MSDO", "ESDO", "KMS", "KCG", "KCG+PCA", "BALD", "VR", "MSTD", "BS", "LL"]
 
 data = pd.read_csv('./data/AL_all_result.csv')
 
